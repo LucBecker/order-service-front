@@ -23,6 +23,7 @@ import { NavComponent } from './views/components/template/nav/nav.component';
 import { HomeComponent } from './views/components/home/home.component';
 import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    TecnicoReadComponent
+    TecnicoReadComponent,
+    TecnicoCreateComponent
   ],
   imports: [
     BrowserModule,
