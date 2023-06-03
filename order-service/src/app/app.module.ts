@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -17,12 +17,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+
 import { HeaderComponent } from './views/components/template/header/header.component';
 import { FooterComponent } from './views/components/template/footer/footer.component';
 import { NavComponent } from './views/components/template/nav/nav.component';
 import { HomeComponent } from './views/components/home/home.component';
 import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/tecnico-read.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 
 
@@ -55,7 +58,10 @@ import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-creat
     MatInputModule,
     MatDatepickerModule,
     FormsModule,
+    ReactiveFormsModule,
     MatPaginatorModule,
+    MatSnackBarModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
