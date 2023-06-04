@@ -35,6 +35,17 @@ export class TecnicoDeleteComponent implements OnInit {
     })
   }
 
+  delete():void {
+    this.service.delete(this.id_tec).subscribe(resposta =>  {
+      this.router.navigate(['tecnicos'])
+      this.service.message('Técnico deletado com sucesso!')
+  }, err => {
+    if(err.error.error.match('possui Ordens de Serviço')){
+      this.service.message(err.error.error);
+    }
+  })
+  }
+
   cancel():void{
     this.router.navigate(['tecnicos'])
   }
