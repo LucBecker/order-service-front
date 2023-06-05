@@ -5,6 +5,7 @@ import { TecnicoReadComponent } from './views/components/tecnico/tecnico-read/te
 import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delete/tecnico-delete.component';
+import { ClienteCreateComponent } from './views/components/cliente/cliente-create/cliente-create.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,11 @@ const routes: Routes = [
   {
     path: 'tecnicos/delete/:id',
     component: TecnicoDeleteComponent
-  }
+  },
+  {
+    path: 'clientes',
+    component: ClienteCreateComponent
+  },
 ];
 
 @NgModule({
