@@ -18,27 +18,27 @@ export class ClienteService {
   ) { }
 
   findAll():Observable<Cliente[]> {
-    const url = this.baseUrl + "/cliente";
+    const url = this.baseUrl + "/clientes";
     return this.http.get<Cliente[]>(url);
   }
 
   findById(id : any):Observable<Cliente> {
-    const url = `${this.baseUrl}/cliente/${id}`;
+    const url = `${this.baseUrl}/clientes/${id}`;
     return this.http.get<Cliente>(url);
   }
 
   create(cliente : Cliente) : Observable<Cliente>{
-    const url = this.baseUrl + "/cliente";
+    const url = this.baseUrl + "/clientes";
     return this.http.post<Cliente>(url, cliente);
   }
 
   update(cliente : Cliente) : Observable<Cliente>{
-    const url = `${this.baseUrl}/cliente/${cliente.id}`;
+    const url = `${this.baseUrl}/clientes/${cliente.id}`;
     return this.http.put<Cliente>(url, cliente);
   }
 
   delete(id : any): Observable<void>{
-    const url = `${this.baseUrl}/cliente/${id}`;
+    const url = `${this.baseUrl}/clientes/${id}`;
     return this.http.delete<void>(url);
   }
 
