@@ -9,6 +9,7 @@ import { ClienteCreateComponent } from './views/components/cliente/cliente-creat
 import { ClienteReadComponent } from './views/components/cliente/cliente-read/cliente-read.component';
 import { ClienteUpdateComponent } from './views/components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './views/components/cliente/cliente-delete/cliente-delete.component';
+import { OsReadComponent } from './views/components/os/os-read/os-read.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'clientes/delete/:id',
     component: ClienteDeleteComponent
+  },
+  {
+    path: 'os',
+    component: OsReadComponent
   }
 ];
 
