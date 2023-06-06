@@ -31,3 +31,15 @@
   #delete{
     color: rgb(233, 92, 92);
   }
+
+  td.baixa{
+    color: rgb(6, 255, 6);
+  }
+
+  td.media{
+    color: yellow;
+  }
+
+  td.alta{
+    color: red;
+  }
