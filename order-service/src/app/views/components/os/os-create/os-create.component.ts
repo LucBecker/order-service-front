@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente';
+import { OS } from 'src/app/models/os';
 import { Tecnico } from 'src/app/models/tecnico';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { OsService } from 'src/app/services/os.service';
 import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
@@ -11,7 +14,13 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 })
 export class OsCreateComponent implements OnInit {
   
-  selected = ''
+  os: OS = {
+    tecnico: '',
+    cliente: '',
+    observacoes: '',
+    status: '',
+    prioridade: ''
+  }
 
   tecnicos: Tecnico[] = []
 
@@ -19,12 +28,21 @@ export class OsCreateComponent implements OnInit {
 
   constructor(
     private tecnicoService : TecnicoService,
-    private clienteService : ClienteService
+    private clienteService : ClienteService,
+    private service : OsService,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
     this.listTecnicos();
     this.listClientes();
+  }
+
+  create(): void {
+    this.service.create(this.os).subscribe(resposta => {
+      this.service.message("Ordem de Serviço criado com sucesso!");
+      this.router.navigate(['os'])
+    })
   }
 
   listTecnicos(): void {
