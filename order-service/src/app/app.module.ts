@@ -37,6 +37,7 @@ import { OsReadComponent } from './views/components/os/os-read/os-read.component
 import { OsCreateComponent } from './views/components/os/os-create/os-create.component';
 import { OsUpdateComponent } from './views/components/os/os-update/os-update.component';
 import { OsViewComponent } from './views/components/os/os-view/os-view.component';
+import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { OsViewComponent } from './views/components/os/os-view/os-view.component
     OsReadComponent,
     OsCreateComponent,
     OsUpdateComponent,
-    OsViewComponent
+    OsViewComponent,
+    OsClosedComponent
   ],
   imports: [
     BrowserModule,

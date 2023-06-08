@@ -8,15 +8,15 @@ import { OsService } from 'src/app/services/os.service';
 import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'app-os-read',
-  templateUrl: './os-read.component.html',
-  styleUrls: ['./os-read.component.css']
+  selector: 'app-os-closed',
+  templateUrl: './os-closed.component.html',
+  styleUrls: ['./os-closed.component.css']
 })
-export class OsReadComponent implements AfterViewInit {
+export class OsClosedComponent implements AfterViewInit {
 
   lista: OS[] = [];
 
-  displayedColumns: string[] = ['tecnico', 'cliente', 'abertura', 'prioridade', 'status', 'action'];
+  displayedColumns: string[] = ['tecnico', 'cliente', 'abertura', 'fechamento', 'prioridade', 'status', 'action'];
   dataSource = new MatTableDataSource<OS>(this.lista);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -34,7 +34,7 @@ export class OsReadComponent implements AfterViewInit {
   findAll():void {
     this.service.findAll().subscribe((resposta) => {
       resposta.forEach(x => {
-        if(x.status != "ENCERRADO"){
+        if(x.status == "ENCERRADO"){
           this.lista.push(x)
         }
       });
@@ -44,10 +44,6 @@ export class OsReadComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource<OS>(this.lista);
       this.dataSource.paginator = this.paginator;
     })
-  }
-
-  navigateToCreate():void {
-    this.router.navigate(['os/create'])
   }
 
   listTecnico():void {
@@ -77,4 +73,3 @@ export class OsReadComponent implements AfterViewInit {
   }
 
 }
-
