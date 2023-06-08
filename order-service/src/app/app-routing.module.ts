@@ -12,6 +12,7 @@ import { ClienteDeleteComponent } from './views/components/cliente/cliente-delet
 import { OsReadComponent } from './views/components/os/os-read/os-read.component';
 import { OsCreateComponent } from './views/components/os/os-create/os-create.component';
 import { OsUpdateComponent } from './views/components/os/os-update/os-update.component';
+import { OsViewComponent } from './views/components/os/os-view/os-view.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'os/update/:id',
     component: OsUpdateComponent
+  },
+  {
+    path: 'os/view/:id',
+    component: OsViewComponent
   }
 ];
 
